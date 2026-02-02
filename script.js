@@ -2,7 +2,7 @@
 const products = [
     {
         id: 1,
-        name: 'سماعات بلوتوث',
+        name: 'iosسماعات بلوتوث',
         category: 'electronics',
         price: 299,
         oldPrice: 399,
@@ -371,3 +371,4 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
