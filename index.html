@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر بيع إلكتروني - المتجر الرقمي</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-store"></i>
+                <span>المتجر الرقمي</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">الرئيسية</a></li>
+                <li><a href="#products" class="nav-link">المنتجات</a></li>
+                <li><a href="#about" class="nav-link">عن المتجر</a></li>
+                <li><a href="#contact" class="nav-link">التواصل</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>مرحباً بك في متجرنا الإلكتروني</h1>
+            <p>اكتشف أفضل المنتجات بأسعار مميزة</p>
+            <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                تسوق الآن
+            </button>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">المنتجات المتاحة</h2>
+            
+            <!-- Filter Options -->
+            <div class="filter-section">
+                <button class="filter-btn active" onclick="filterProducts('all')">الكل</button>
+                <button class="filter-btn" onclick="filterProducts('electronics')">إلكترونيات</button>
+                <button class="filter-btn" onclick="filterProducts('fashion')">ملابس</button>
+                <button class="filter-btn" onclick="filterProducts('home')">منزل</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">عن متجرنا</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>لماذا تختار متجرنا؟</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> منتجات عالية الجودة</li>
+                        <li><i class="fas fa-check"></i> أسعار تنافسية</li>
+                        <li><i class="fas fa-check"></i> شحن سريع وآمن</li>
+                        <li><i class="fas fa-check"></i> خدمة عملاء ممتازة</li>
+                        <li><i class="fas fa-check"></i> ضمان على جميع المنتجات</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>+1000</h3>
+                        <p>منتج</p>
+                    </div>
+                    <div class="stat">
+                        <h3>+5000</h3>
+                        <p>عميل راضي</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>دعم فني</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>العنوان</h4>
+                            <p>الرياض، المملكة العربية السعودية</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>الهاتف</h4>
+                            <p>+966 50 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>info@store.com</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="sendMessage(event)">
+                    <input type="text" placeholder="اسمك" required>
+                    <input type="email" placeholder="بريدك الإلكتروني" required>
+                    <textarea placeholder="رسالتك" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">إرسال</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>سلة التسوق</h2>
+            <button class="close-btn" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be inserted here -->
+        </div>
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>المجموع الفرعي:</span>
+                <span id="subtotal">0 ر.س</span>
+            </div>
+            <div class="summary-row">
+                <span>الشحن:</span>
+                <span id="shipping">0 ر.س</span>
+            </div>
+            <div class="summary-row total">
+                <span>الإجمالي:</span>
+                <span id="total">0 ر.س</span>
+            </div>
+            <button class="btn btn-primary btn-full" onclick="checkout()">
+                الدفع الآن
+            </button>
+            <button class="btn btn-secondary btn-full" onclick="continueShopping()">
+                متابعة التسوق
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>عن المتجر</h4>
+                    <p>متجر إلكتروني متخصص في بيع منتجات عالية الجودة بأسعار تنافسية.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#about">عن المتجر</a></li>
+                        <li><a href="#contact">التواصل</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 متجر بيع إلكتروني. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
