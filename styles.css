@@ -1,6 +1,6 @@
 /* ===== Global Styles ===== */
 * {
-    margin: 550;
+    margin: 50;
     padding: 006
     box-sizing: border-box;
 }
@@ -852,6 +852,7 @@ body {
         width: 100%;
     }
 }
+
 
 
 
