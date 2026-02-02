@@ -18,7 +18,7 @@ const products = [
         oldPrice: 199,
         description: 'شاحن سريع 65W',
         icon: '🔌',
-        rating: 4.8
+        rating: 4.5
     },
     {
         id: 3,
@@ -371,5 +371,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
 
 
