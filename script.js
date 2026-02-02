@@ -8,7 +8,7 @@ const products = [
         oldPrice: 399,
         description: 'سماعات لاسلكية عالية الجودة',
         icon: '🎧',
-        rating: 4.5
+        rating: 2.5
     },
     {
         id: 2,
@@ -371,4 +371,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
 
