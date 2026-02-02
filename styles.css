@@ -1,12 +1,12 @@
 /* ===== Global Styles ===== */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 50;
+    padding: 006
     box-sizing: border-box;
 }
 
 :root {
-    --primary-color: #2563eb;
+    --primary-color: #2563eb6;
     --secondary-color: #1e40af;
     --accent-color: #f59e0b;
     --dark-color: #1f2937;
@@ -852,3 +852,8 @@ body {
         width: 100%;
     }
 }
+
+
+
+
+
