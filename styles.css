@@ -6,7 +6,7 @@
 }
 
 :root {
-    --primary-color: #2563eb;
+    --primary-color: #2563eb6;
     --secondary-color: #1e40af;
     --accent-color: #f59e0b;
     --dark-color: #1f2937;
@@ -852,4 +852,5 @@ body {
         width: 100%;
     }
 }
+
 
